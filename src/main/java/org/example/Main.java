@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -30,6 +31,14 @@ public class Main {
                 System.out.println("----------------------");
                 for(int i = num; i > 0; i--){
                     System.out.printf("%d / %s / %s\n", list.get(i - 1).number, list.get(i - 1).author, list.get(i - 1).wiseSaying);
+                }
+            }
+            else {
+                StringTokenizer st = new StringTokenizer(input,"=");
+                if (st.nextToken().equals("삭제?id")){
+                    int id = Integer.parseInt(st.nextToken());
+                    list.remove(id);
+                    System.out.println(id+"번 명언이 삭제되었습니다.");
                 }
             }
         }
