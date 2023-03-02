@@ -39,14 +39,18 @@ public class Main {
                 Iterator<WiseSaying> iterator = list.iterator();
                 if (st.nextToken().equals("삭제?id")){
                     int id = Integer.parseInt(st.nextToken());
+                    boolean f = false;
                     while(iterator.hasNext()){
                         int index = iterator.next().number;
 
                         if(index == id) {
                             iterator.remove();
                             System.out.println(id+"번 명언이 삭제되었습니다.");
+                            f = true;
                         }
                     }
+                    if(!f)
+                        System.out.println(id+"번 명언은 존재하지 않습니다.");
                 }
             }
         }
