@@ -1,11 +1,14 @@
 package org.example.wiseSaying.entity;
 
-public class WiseSaying {
+import java.io.Serializable;
+
+public class WiseSaying implements Serializable {
     String content;
     String author;
     int id;
 
     public WiseSaying(String _wiseSaying, String _author, int _id) {
+        super();
         this.content = _wiseSaying;
         this.author = _author;
         this.id = _id;
